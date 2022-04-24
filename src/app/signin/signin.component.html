@@ -1,46 +1,47 @@
-<form [formGroup]="formSignin">
+<form [formGroup]="formSignin" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Usuario</label>
+    <input type="text"  class="form-control" formControlName="usuario">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Contraseña</label>
+    <input type="text" class="form-control" formControlName="passwd">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Repite contraseña</label>
+    <input type="text" class="form-control" formControlName="repite_passwd">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Correo</label>
+    <input type="text" class="form-control" formControlName="correo">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Nombre(s)</label>
+    <input type="text" class="form-control" formControlName="nombre">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Apellido Paterno</label>
+    <input type="text" class="form-control" formControlName="ape_pat">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Apellido Materno</label>
+    <input type="text" class="form-control" formControlName="ape_mat">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Edad</label>
+    <input type="text" class="form-control" formControlName="edad">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Peso</label>
+    <input type="text" class="form-control" formControlName="peso">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Altura</label>
+    <input type="text" class="form-control" formControlName="altura">
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input type="text" name="" id="" class="form-control">
+    <label for="">Genero(Biologico maldito subnormal)</label>
+    <input type="text" class="form-control" formControlName="genero">
   </div>
+  <input type="submit" value="Enviar" class="btn btn-block btn-success"/>
 </form>
