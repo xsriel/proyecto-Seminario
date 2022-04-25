@@ -6,6 +6,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
+
 export class SigninComponent implements OnInit {
 
   formSignin: FormGroup;
@@ -29,4 +30,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    console.log(this.formSignin.value);
+  }
 }
