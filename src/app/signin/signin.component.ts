@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -13,17 +13,42 @@ export class SigninComponent implements OnInit {
 
   constructor() {
     this.formSignin = new FormGroup({
-      usuario: new FormControl(),
-      passwd: new FormControl(),
-      repite_passwd: new FormControl(),
-      correo: new FormControl(),
-      nombre: new FormControl(),
-      ape_pat: new FormControl(),
+      usuario: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+
+      ]),
+      passwd: new FormControl('', [
+        Validators.required,
+        //validacion del passwd debe tener de 6-12 caracteres minimo una minuscula, una mayuscula 1 digito y un caracter especial
+        Validators.pattern(/(?=^.{6,12}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/),
+      ]),
+      repite_passwd: new FormControl('', [
+        Validators.required
+      ]),
+      correo: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/)
+      ]),
+      nombre: new FormControl('', [
+        Validators.required
+      ]),
+      ape_pat: new FormControl('', [
+        Validators.required
+      ]),
       ape_mat: new FormControl(),
-      edad: new FormControl(),
-      peso: new FormControl(),
-      altura: new FormControl(),
-      genero: new FormControl()
+      edad: new FormControl('', [
+        Validators.required
+      ]),
+      peso: new FormControl('', [
+        Validators.required
+      ]),
+      altura: new FormControl('', [
+        Validators.required
+      ]),
+      genero: new FormControl('', [
+        Validators.required
+      ])
     });
   }
 
@@ -33,4 +58,8 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     console.log(this.formSignin.value);
   }
+  passwdValidator(formControl: FormControl){
+    return null
+  }
+
 }

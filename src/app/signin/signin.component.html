@@ -5,15 +5,15 @@
   </div>
   <div class="form-group">
     <label for="">Contraseña</label>
-    <input type="text" class="form-control" formControlName="passwd">
+    <input type="password" class="form-control" formControlName="passwd">
   </div>
   <div class="form-group">
     <label for="">Repite contraseña</label>
-    <input type="text" class="form-control" formControlName="repite_passwd">
+    <input type="password" class="form-control" formControlName="repite_passwd">
   </div>
   <div class="form-group">
     <label for="">Correo</label>
-    <input type="text" class="form-control" formControlName="correo">
+    <input type="email" class="form-control" formControlName="correo">
   </div>
   <div class="form-group">
     <label for="">Nombre(s)</label>
@@ -29,19 +29,26 @@
   </div>
   <div class="form-group">
     <label for="">Edad</label>
-    <input type="text" class="form-control" formControlName="edad">
+    <input type="number" class="form-control" formControlName="edad">
   </div>
   <div class="form-group">
     <label for="">Peso</label>
-    <input type="text" class="form-control" formControlName="peso">
+    <input type="number" class="form-control" formControlName="peso">
   </div>
   <div class="form-group">
     <label for="">Altura</label>
-    <input type="text" class="form-control" formControlName="altura">
+    <input type="number" class="form-control" formControlName="altura">
   </div>
   <div class="form-group">
-    <label for="">Genero(Biologico maldito subnormal)</label>
-    <input type="text" class="form-control" formControlName="genero">
+    <label for="genero">Genero</label>
+    <div for="genero">
+      <input type="radio" value="hombre" name="genero" formControlName="genero">
+      <label for="hombre">Hombre</label>
+    </div>
+    <div for="genero">
+      <input type="radio" value="mujer" name="genero" formControlName="genero">
+      <label for="mujer">mujer</label>
+    </div>
   </div>
-  <input type="submit" value="Enviar" class="btn btn-block btn-success"/>
+  <input type="submit" value="Enviar" class="btn btn-block btn-success" [disabled]="!formSignin.valid"/>
 </form>
