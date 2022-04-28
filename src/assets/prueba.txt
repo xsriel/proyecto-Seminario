@@ -1,0 +1,13 @@
+***Tabla usuario***
+int-> id
+varchar-> usuario
+varchar-> correo
+varchar-> passwd
+varchar-> Nombre(s)
+varchar-> Ape_Pat
+varchar-> Ape_Mat
+int-> edad
+int-> Altura cm
+float-> peso kg
+float-> IMC
+varchar-> Genero
